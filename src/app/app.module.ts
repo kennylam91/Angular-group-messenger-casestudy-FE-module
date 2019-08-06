@@ -8,6 +8,7 @@ import { NewMessageComponent } from './component/new-message/new-message.compone
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserComponent } from './component/user/user.component';
 import { LogInComponent } from './component/log-in/log-in.component';
+import { UserListComponent } from './component/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LogInComponent } from './component/log-in/log-in.component';
     AllMessageComponent,
     NewMessageComponent,
     UserComponent,
-    LogInComponent
+    LogInComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

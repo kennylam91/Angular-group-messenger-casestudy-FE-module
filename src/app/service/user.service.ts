@@ -11,6 +11,7 @@ export class UserService {
     {username: 'admin2', password: 'admin2'},
     {username: 'admin3', password: 'admin3'},
     {username: 'admin4', password: 'admin4'},
+    {username: 'admin5', password: 'admin5'},
   ];
 
   addtoUserList(user: IUser) {
