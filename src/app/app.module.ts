@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllMessageComponent } from './component/all-message/all-message.component';
+import { NewMessageComponent } from './component/new-message/new-message.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UserComponent } from './component/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllMessageComponent
+    AllMessageComponent,
+    NewMessageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
