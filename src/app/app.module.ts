@@ -10,6 +10,7 @@ import { UserComponent } from './component/user/user.component';
 import { LogInComponent } from './component/log-in/log-in.component';
 import { UserListComponent } from './component/user-list/user-list.component';
 import { HeaderComponent } from './component/header/header.component';
+import { GroupviewComponent } from './component/groupview/groupview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './component/header/header.component';
     UserComponent,
     LogInComponent,
     UserListComponent,
-    HeaderComponent
+    HeaderComponent,
+    GroupviewComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,8 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     this.user = {
       username: this.loginUserForm.controls.username.value,
-      password: this.loginUserForm.controls.password.value
+      password: this.loginUserForm.controls.password.value,
+      status: 'offline',
     };
     console.log(this.userService.checkUser(this.user));
   }
