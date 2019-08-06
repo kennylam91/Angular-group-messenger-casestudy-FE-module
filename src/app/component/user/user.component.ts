@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {IUser} from '../../model/user';
+import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'app-user',
@@ -19,9 +20,10 @@ export class UserComponent implements OnInit {
       username: this.userRegisterForm.controls.username.value,
       password: this.userRegisterForm.controls.password.value,
     };
+    this.userService.addtoUserList(this.newUser);
   }
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {

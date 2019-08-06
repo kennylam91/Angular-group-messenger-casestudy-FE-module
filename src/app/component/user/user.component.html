@@ -16,6 +16,5 @@
   <button type="submit">Submit</button>
 </form>
 <div *ngIf="newUser">
-  {{newUser.username}}
-  {{newUser.password}}
+  <div *ngFor="let user of userService.userList">{{user.username}} {{user.password}}</div>
 </div>
