@@ -13,6 +13,7 @@ export class UserService {
     {username: 'admin4', password: 'admin4', status: 'offline'},
     {username: 'admin5', password: 'admin5', status: 'offline'},
   ];
+  loginUser: IUser;
 
   addtoUserList(user: IUser) {
     this.userList.push(user);
@@ -22,6 +23,7 @@ export class UserService {
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.userList.length; i++) {
       if ((this.userList[i].username === user.username) && (this.userList[i].password === user.password)) {
+        this.loginUser = this.userList[i];
         return true;
       }
     }
