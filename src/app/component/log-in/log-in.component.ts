@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IUser} from '../../model/user';
 import {FormControl, FormGroup} from '@angular/forms';
 import {UserService} from '../../service/user.service';
+import {Router, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -22,10 +23,12 @@ export class LogInComponent implements OnInit {
       password: this.loginUserForm.controls.password.value,
       status: 'offline',
     };
-    console.log(this.userService.checkUser(this.user));
+    if (this.userService.checkUser(this.user)) {
+      this.router.navigateByUrl('chat');
+    }
   }
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit() {
