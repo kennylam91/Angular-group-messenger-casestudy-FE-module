@@ -1,1 +1,6 @@
-<div *ngFor="let mes of messageList">{{mes.content}}</div>
+<div class="all-message" id="all-message">
+  <div *ngFor="let mes of messageList">
+    <div>{{mes.content}}</div>
+    <hr>
+  </div>
+</div>

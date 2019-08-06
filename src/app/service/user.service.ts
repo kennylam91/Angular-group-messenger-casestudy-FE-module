@@ -6,12 +6,12 @@ import {IUser} from '../model/user';
 })
 export class UserService {
   userList: IUser[] = [
-    {username: 'admin', password: 'admin'},
-    {username: 'admin1', password: 'admin1'},
-    {username: 'admin2', password: 'admin2'},
-    {username: 'admin3', password: 'admin3'},
-    {username: 'admin4', password: 'admin4'},
-    {username: 'admin5', password: 'admin5'},
+    {username: 'admin', password: 'admin', status: 'online'},
+    {username: 'admin1', password: 'admin1', status: 'online'},
+    {username: 'admin2', password: 'admin2', status: 'online'},
+    {username: 'admin3', password: 'admin3', status: 'offline'},
+    {username: 'admin4', password: 'admin4', status: 'offline'},
+    {username: 'admin5', password: 'admin5', status: 'offline'},
   ];
 
   addtoUserList(user: IUser) {

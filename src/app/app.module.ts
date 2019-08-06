@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserComponent } from './component/user/user.component';
 import { LogInComponent } from './component/log-in/log-in.component';
 import { UserListComponent } from './component/user-list/user-list.component';
+import { HeaderComponent } from './component/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserListComponent } from './component/user-list/user-list.component';
     NewMessageComponent,
     UserComponent,
     LogInComponent,
-    UserListComponent
+    UserListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
