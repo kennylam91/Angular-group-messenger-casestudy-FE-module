@@ -13,8 +13,5 @@
            name="password"
            id="password" placeholder="Input password">
   </div>
-  <button type="submit">Submit</button>
+  <button type="submit">Create</button>
 </form>
-<div *ngIf="newUser">
-  <div *ngFor="let user of userService.userList">{{user.username}} {{user.password}}</div>
-</div>

@@ -12,6 +12,16 @@ export class UserService {
     this.userList.push(user);
   }
 
+  checkUser(user: IUser): boolean {
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.userList.length; i++) {
+      if ((this.userList[i].username === user.username) && (this.userList[i].password === user.password)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   constructor() {
   }
 }

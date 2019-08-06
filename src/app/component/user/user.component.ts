@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
       password: this.userRegisterForm.controls.password.value,
     };
     this.userService.addtoUserList(this.newUser);
+    console.log(this.userService.userList);
   }
 
   constructor(private userService: UserService) {
