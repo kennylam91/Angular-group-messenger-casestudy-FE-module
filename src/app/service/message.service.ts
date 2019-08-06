@@ -7,7 +7,19 @@ import {IMessage} from '../model/message';
 export class MessageService {
   messageList: IMessage[] = [
     {content: 'Xin chao'},
-    {content: 'Cam on'}
+    {content: 'Cam on'},
+    {content: 'Chao buoi sang'},
+    {content: 'Chao buoi trua'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
+    {content: 'Chao buoi toi'},
   ];
 
   addMessage(s: string) {
