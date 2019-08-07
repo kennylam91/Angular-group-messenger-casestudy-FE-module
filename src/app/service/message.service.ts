@@ -6,27 +6,23 @@ import {IMessage} from '../model/message';
 })
 export class MessageService {
   messageList: IMessage[] = [
-    {content: 'Xin chao'},
-    {content: 'Cam on'},
-    {content: 'Chao buoi sang'},
-    {content: 'Chao buoi trua'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
-    {content: 'Chao buoi toi'},
+    {content: 'Xin chao', user: 'admin'},
+    {content: 'Cam on', user: 'admin1'},
+    {content: 'Chao buoi sang', user: 'admin'},
+    {content: 'Chao buoi trua', user: 'admin2'},
+    {content: 'Chao buoi toi', user: 'admin3'},
+    {content: 'Chao buoi toi', user: 'admin'},
+    {content: 'Chao buoi toi', user: 'admin1'},
+    {content: 'Chao buoi toi', user: 'admin4'},
+    {content: 'Chao buoi toi', user: 'admin3'},
+    {content: 'Chao buoi toi', user: 'admin1'},
+    {content: 'Chao buoi toi', user: 'admin2'},
+    {content: 'Chao buoi toi', user: 'admin3'},
+    {content: 'Chao buoi toi', user: 'admin4'},
+    {content: 'Chao buoi toi', user: 'admin4'},
   ];
 
-  addMessage(s: string) {
-    const message: IMessage = {
-        content: s
-      }
-    ;
+  addMessage(message: IMessage) {
     this.messageList.push(message);
   }
 
