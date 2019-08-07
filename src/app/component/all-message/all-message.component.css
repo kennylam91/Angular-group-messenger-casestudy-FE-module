@@ -1,7 +1,7 @@
 #all-message{
   display: block;
   height: 500px;
-  overflow:scroll
+  overflow: scroll;
 }
 .message{
   display: inline-block;

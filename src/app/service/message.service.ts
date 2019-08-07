@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {IMessage} from '../model/message';
+import * as $ from 'jquery';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,16 @@ export class MessageService {
     {content: 'Chao buoi toi', username: 'admin4'},
   ];
 
-  addMessage(message: IMessage){
+  addMessage(message: IMessage) {
     this.messageList.push(message);
+  }
+
+  scrollAllMessage() {
+    $(document).ready(() => {
+      const scrollHeight = document.getElementById('all-message').scrollHeight;
+      $('#all-message').scrollTop(scrollHeight);
+      console.log(scrollHeight);
+    });
   }
 
   constructor() {

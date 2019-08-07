@@ -3,6 +3,7 @@ import {MessageService} from '../../service/message.service';
 import {IMessage} from '../../model/message';
 import {UserService} from '../../service/user.service';
 import {IUser} from '../../model/user';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class AllMessageComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.messageService.scrollAllMessage();
   }
 
 }
