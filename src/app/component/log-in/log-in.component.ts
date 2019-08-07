@@ -3,6 +3,7 @@ import {IUser} from '../../model/user';
 import {FormControl, FormGroup} from '@angular/forms';
 import {UserService} from '../../service/user.service';
 import {Router, Routes} from '@angular/router';
+import {Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -12,19 +13,26 @@ import {Router, Routes} from '@angular/router';
 export class LogInComponent implements OnInit {
 
   user: IUser;
+  loginStatus: boolean;
+  loginAttempt: boolean;
   loginUserForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
-  onSubmit() {
+  onSubmit(): void {
+    this.loginAttempt = true;
     this.user = {
-      username: this.loginUserForm.controls.username.value,
-      password: this.loginUserForm.controls.password.value,
+      username: this.loginUserForm.value.username,
+      password: this.loginUserForm.value.password,
       status: 'offline',
     };
+    console.log(this.loginUserForm);
     if (this.userService.checkUser(this.user)) {
       this.router.navigateByUrl('chat');
+      this.loginStatus = true;
+    } else {
+      this.loginStatus = false;
     }
   }
 
