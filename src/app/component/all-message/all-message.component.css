@@ -3,3 +3,9 @@
   height: 500px;
   overflow:scroll
 }
+.message{
+  display: inline-block;
+  border: solid 1px deepskyblue;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}

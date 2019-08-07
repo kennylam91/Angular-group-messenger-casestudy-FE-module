@@ -1,7 +1,10 @@
 <div class="all-message" id="all-message">
   <div *ngFor="let mes of messageList">
-    <div style="color: darkorange;">{{mes.username}}</div>
-    <div>{{mes.content}}</div>
+    <div class="message">
+      <div style="color: darkorange;">{{mes.username}}</div>
+      <div>{{mes.content}}</div>
+    </div>
     <hr>
   </div>
+
 </div>
