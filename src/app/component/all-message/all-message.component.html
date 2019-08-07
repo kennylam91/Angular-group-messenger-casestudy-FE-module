@@ -1,10 +1,9 @@
 <div class="all-message" id="all-message">
-  <div *ngFor="let mes of messageList">
+  <div *ngFor="let mes of messageList" class="single-message p-2"[class.right-align]="mes.username === loginUser.username">
     <div class="message">
       <div style="color: darkorange;">{{mes.username}}</div>
       <div>{{mes.content}}</div>
     </div>
-    <hr>
   </div>
 
 </div>

@@ -15,7 +15,11 @@ export class UserService {
     {username: 'admin4', password: 'admin4', status: 'offline'},
     {username: 'admin5', password: 'admin5', status: 'offline'},
   ];
-  loginUser: IUser;
+  loginUser: IUser = {
+    username: 'admin',
+    password: 'admin',
+    status: 'online'
+  }; // Test login user
 
   addtoUserList(user: IUser) {
     this.userList.push(user);

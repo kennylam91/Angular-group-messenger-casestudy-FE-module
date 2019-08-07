@@ -9,3 +9,11 @@
   padding: 0.3rem;
   border-radius: 0.5rem;
 }
+.right-align{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+.single-message{
+  border-bottom: solid 1px black;
+}
