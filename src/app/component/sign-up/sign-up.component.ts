@@ -1,14 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import {IUser} from '../../model/user';
+import {FormControl, FormGroup} from '@angular/forms';
 import {UserService} from '../../service/user.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class UserComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   newUser: IUser;
   userRegisterForm = new FormGroup({
     username: new FormControl(''),
@@ -23,12 +24,12 @@ export class UserComponent implements OnInit {
     };
     this.userService.addtoUserList(this.newUser);
     console.log(this.userService.userList);
+    this.router.navigateByUrl('login');
   }
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit() {
   }
-
 }
