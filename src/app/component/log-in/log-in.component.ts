@@ -28,7 +28,7 @@ export class LogInComponent implements OnInit {
       status: 'offline',
     };
     console.log(this.loginUserForm);
-    if (this.userService.checkUser(this.user)) {
+    if (this.userService.login(this.user)) {
       this.router.navigateByUrl('chat');
       this.loginStatus = true;
     } else {

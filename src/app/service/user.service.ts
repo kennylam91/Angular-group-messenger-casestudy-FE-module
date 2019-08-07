@@ -5,6 +5,8 @@ import {IUser} from '../model/user';
   providedIn: 'root'
 })
 export class UserService {
+  static STATUS_ONLINE = 'online';
+  static STATUS_OFFLINE = 'offline';
   userList: IUser[] = [
     {username: 'admin', password: 'admin', status: 'online'},
     {username: 'admin1', password: 'admin1', status: 'online'},
@@ -19,10 +21,11 @@ export class UserService {
     this.userList.push(user);
   }
 
-  checkUser(user: IUser): boolean {
+  login(user: IUser): boolean {
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.userList.length; i++) {
       if ((this.userList[i].username === user.username) && (this.userList[i].password === user.password)) {
+        this.userList[i].status = UserService.STATUS_ONLINE;
         this.loginUser = this.userList[i];
         return true;
       }
