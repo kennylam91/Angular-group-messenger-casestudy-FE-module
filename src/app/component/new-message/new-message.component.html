@@ -1,5 +1,5 @@
-<form class="form-group form-row" (ngSubmit)="onSubmit()">
-  <input type="text" [(ngModel)]="content"
+<form class="form-group form-row">
+  <input type="text" #messageText
          class="form-control col-sm-11" name="new-message" placeholder="Type your message">
-  <button class=" btn btn-primary" type="submit">Send</button>
+  <button class=" btn btn-primary" type="submit" (click)="onSubmit(messageText.value); messageText.value='';">Send</button>
 </form>

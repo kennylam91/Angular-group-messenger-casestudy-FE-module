@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IMessage} from '../../model/message';
 import {MessageService} from '../../service/message.service';
+import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'app-new-message',
@@ -9,14 +10,20 @@ import {MessageService} from '../../service/message.service';
 })
 export class NewMessageComponent implements OnInit {
 
-  private content: string;
+  private message: IMessage = {
+    username: '',
+    content: ''
+  };
 
-  onSubmit() {
-    this.messageService.addMessage(this.content);
-    this.content = '';
+  onSubmit(messageText: string) {
+    this.message.username = this.userService.loginUser.username;
+    this.message.content = messageText;
+    console.log(this.message);
+    this.messageService.addMessage(this.message);
   }
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private userService: UserService) {
+
   }
 
   ngOnInit() {
