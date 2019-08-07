@@ -1,22 +1,35 @@
 <div class="row">
   <div class="page text-center col-sm-6 offset-sm-3 mt-5 pt-5">
     <h2>Register new User:</h2>
-    <form [formGroup]="userRegisterForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userRegisterForm" (ngSubmit)="onSubmit()" novalidate>
       <div class="form-group form-row mt-5">
-        <label class="col-sm-3 pt-1">User: </label>
+        <label class="col-sm-3 pt-2">User: </label>
         <input type="text" formControlName="username"
                name="username"
-               id="username" class="form-control col-sm-9" placeholder="Input username">
+               id="username" class="form-control col-sm-7"
+               placeholder="Input username"
+               [class.is-invalid]="userRegisterForm.controls.username.invalid && (userRegisterForm.controls.username.dirty ||
+                  userRegisterForm.controls.username.touched)">
+        <div *ngIf="userRegisterForm.controls.username.invalid" class="invalid-feedback">
+          <div *ngIf="userRegisterForm.controls.username.errors.required" class="">Username Required</div>
+          <div *ngIf="userRegisterForm.controls.username.errors.minlength" class="">Minimum 4 characters</div>
+        </div>
       </div>
       <div class="form-group form-row">
-        <label class="col-sm-3 pt-1">Password:</label>
+        <label class="col-sm-3 pt-2">Password:</label>
         <input type="password" formControlName="password"
-               class="form-control col-sm-9"
+               class="form-control col-sm-7"
                name="password"
-               id="password" placeholder="Input password">
+               id="password" placeholder="Input password"
+               [class.is-invalid]="userRegisterForm.controls.password.invalid && (userRegisterForm.controls.password.dirty||
+                userRegisterForm.controls.password.touched)">
+        <div *ngIf="userRegisterForm.controls.password.invalid" class="invalid-feedback">
+          <div *ngIf="userRegisterForm.controls.password.errors.required">Password Required</div>
+          <div *ngIf="userRegisterForm.controls.password.errors.minlength">Minimum 4 characters</div>
+        </div>
       </div>
       <div class="offset-sm-1">
-        <button type="submit" class="btn btn-outline-primary text-center">Create</button>
+        <button type="submit" class="btn btn-outline-primary text-center" [disabled]="userRegisterForm.invalid">Create</button>
       </div>
     </form>
   </div>

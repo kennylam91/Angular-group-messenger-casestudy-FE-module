@@ -16,7 +16,7 @@
                   loginUserForm.controls.username.touched)">
           <div *ngIf="loginUserForm.controls.username.invalid" class="invalid-feedback">
             <div *ngIf="loginUserForm.controls.username.errors.required" class="offset-sm-3">Username Required</div>
-            <div *ngIf="loginUserForm.controls.username.errors.minlength" class="offset-sm-3">Minimum 6 characters</div>
+            <div *ngIf="loginUserForm.controls.username.errors.minlength" class="offset-sm-3">Minimum 4 characters</div>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
                 loginUserForm.controls.password.touched)">
           <div *ngIf="loginUserForm.controls.password.invalid" class="invalid-feedback">
             <div *ngIf="loginUserForm.controls.password.errors.required">Password Required</div>
-            <div *ngIf="loginUserForm.controls.password.errors.minlength">Minimum 6 characters</div>
+            <div *ngIf="loginUserForm.controls.password.errors.minlength">Minimum 4 characters</div>
           </div>
         </div>
         <button #submit type="submit" class="btn btn-outline-primary offset-sm-3">Log in</button>
