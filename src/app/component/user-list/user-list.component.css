@@ -1,20 +1,22 @@
-.left-div{
+.user-div {
   background: #1e1563;
   height: 100%;
   color: white;
+  position: relative;
 }
 
 .user-list {
 
 }
 
-.user-div {
+.single-user {
   text-align: center;
   border-bottom: groove 1px #595959;
 }
-.find-user{
+
+.find-user {
   display: inline-block;
-  margin: 10px 5px  ;
+  margin: 10px 5px;
   width: 92%;
   height: 2.5rem;
   background: #25197a;
@@ -22,5 +24,17 @@
   line-height: 2rem;
   color: white;
   /*border-radius: 0.5rem;*/
-  border: 0.5px groove whitesmoke ;
+  border: 0.5px groove whitesmoke;
+}
+
+.user-footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+
+}
+
+#log-out-icon:hover {
+
 }

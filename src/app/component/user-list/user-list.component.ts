@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IUser} from '../../model/user';
 import {UserService} from '../../service/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -12,9 +13,13 @@ export class UserListComponent implements OnInit {
   userList: IUser[];
   loginUser: IUser;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.userList = userService.userList;
     this.loginUser = userService.loginUser;
+  }
+
+  logoutUser() {
+    console.log('log out user');
   }
 
   ngOnInit() {

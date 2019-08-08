@@ -1,14 +1,19 @@
-<div class="left-div">
-  <div class="chat-status text-center pt-2">
+<div class="user-div">
+  <div class="user-header text-center pt-2">
     <p>Codegym Group <br>{{loginUser.username}}</p>
   </div>
   <div class="user-list">
     <div>
       <input type="text" class="find-user" placeholder="Find user">
     </div>
-    <div class="user-div" *ngFor="let user of userList">
+    <div class="single-user" *ngFor="let user of userList">
       <div>{{user.username}}</div>
       <div>{{user.status}}</div>
     </div>
+  </div>
+  <div class="user-footer">
+    <a routerLink="/logout">
+      <i id=" log-out-icon" class="fas fa-2x fa-sign-out-alt"></i>
+    </a>
   </div>
 </div>

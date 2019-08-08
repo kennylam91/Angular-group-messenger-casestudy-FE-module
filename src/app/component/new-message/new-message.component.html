@@ -1,6 +1,5 @@
 <form class="form-group form-row m-3">
   <input type="text" #messageText
          class="form-control col-sm-10 d-inline-block mr-2 " name="new-message" placeholder="Type your message">
-  <i class="far fa-address-book"></i>
   <button class=" btn btn-primary" style="width: 100px;" type="submit" (click)="onSubmit(messageText.value); messageText.value='';">Send</button>
 </form>
