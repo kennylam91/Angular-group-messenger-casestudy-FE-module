@@ -5,8 +5,9 @@
   position: relative;
 }
 
-.user-list {
-
+.all-User {
+  overflow-y: auto;
+  height: 350px;
 }
 
 .single-user {

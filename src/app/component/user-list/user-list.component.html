@@ -1,6 +1,8 @@
 <div class="user-div">
   <div class="user-header text-center pt-2">
-    <p>Codegym Group <br>{{loginUser.username}}</p>
+    <p>Codegym Group <br>
+      <i class="fas fa-circle user-online-icon"></i>
+      {{loginUser.username}}</p>
   </div>
   <div class="user-list">
     <form class="user-search-div input-group" (ngSubmit)="searchUsers(userSearch.value)">
@@ -12,13 +14,16 @@
         </span>
       </div>
     </form>
-    <div class="single-user" *ngFor="let user of userList">
-      <div>{{user.username}}
+    <div class="all-User">
+      <div class="single-user" *ngFor="let user of userList">
+        <div>{{user.username}}
+        </div>
+        <div class="user-status">
+          <i *ngIf="user.status==='online'" id="user-online-icon" class="fas fa-circle user-online-icon"></i>
+          <i *ngIf="user.status==='offline'" id="user-offline-icon" class="fas fa-circle user-offline-icon"></i>
+          {{user.status}}
+        </div>
       </div>
-      <div class="user-status">
-        <i *ngIf="user.status==='online'" id="user-online-icon" class="fas fa-circle user-online-icon"></i>
-        <i *ngIf="user.status==='offline'" id="user-offline-icon" class="fas fa-circle user-offline-icon"></i>
-        {{user.status}}</div>
     </div>
   </div>
   <div class="user-footer">
