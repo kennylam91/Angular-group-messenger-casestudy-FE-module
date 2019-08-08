@@ -1,6 +1,14 @@
-<h4>User List</h4>
-<div *ngFor="let user of userList">
-  <hr>
-  <div>{{user.username}}</div>
-  <div>{{user.status}}</div>
+<div class="left-div">
+  <div class="chat-status text-center pt-2">
+    <p>Codegym Group <br>{{loginUser.username}}</p>
+  </div>
+  <div class="user-list">
+    <div>
+      <input type="text" class="find-user" placeholder="Find user">
+    </div>
+    <div class="user-div" *ngFor="let user of userList">
+      <div>{{user.username}}</div>
+      <div>{{user.status}}</div>
+    </div>
+  </div>
 </div>

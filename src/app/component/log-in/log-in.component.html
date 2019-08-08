@@ -1,4 +1,4 @@
-<div class="page" class="pt-5">
+<div class="login-page pt-5">
   <h1 class="text-center m-4">Welcome to Angular Group Messenger</h1>
   <div class="row">
     <div class="col-sm-4 mt-4 pt-5 offset-sm-4">
@@ -33,9 +33,9 @@
             <div *ngIf="loginUserForm.controls.password.errors.minlength">Minimum 4 characters</div>
           </div>
         </div>
-        <button #submit type="submit" class="btn btn-outline-primary offset-sm-3">Log in</button>
+        <button #submit type="submit" class="btn btn-primary offset-sm-3">Log in</button>
         <a routerLink="/sign-up">
-          <button type="button" class="btn btn-outline-danger offset-sm-1">Sign up</button>
+          <button type="button" class="btn btn-danger offset-sm-1">Sign up</button>
         </a>
         <div *ngIf="loginAttempt && !loginStatus" class="text-danger mt-3 offset-sm-3">This account does not exist</div>
       </form>

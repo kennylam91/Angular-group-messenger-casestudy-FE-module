@@ -1,0 +1,26 @@
+.left-div{
+  background: #1e1563;
+  height: 100%;
+  color: white;
+}
+
+.user-list {
+
+}
+
+.user-div {
+  text-align: center;
+  border-bottom: groove 1px #595959;
+}
+.find-user{
+  display: inline-block;
+  margin: 10px 5px  ;
+  width: 92%;
+  height: 2.5rem;
+  background: #25197a;
+  border: none;
+  line-height: 2rem;
+  color: white;
+  /*border-radius: 0.5rem;*/
+  border: 0.5px groove whitesmoke ;
+}

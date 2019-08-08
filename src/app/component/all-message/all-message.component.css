@@ -1,19 +1,32 @@
-#all-message{
+.all-message-div{
+
+}
+.all-message-content{
   display: block;
   height: 500px;
   overflow: scroll;
 }
+.single-message{
+  border-bottom:groove 0.5px rgba(0, 0, 0, 0.12);
+  max-width: 95%;
+}
 .message{
   display: inline-block;
-  border: solid 1px deepskyblue;
+  border: solid 0.8px deepskyblue;
   padding: 0.3rem;
   border-radius: 0.5rem;
+  max-width: 100%;
 }
 .right-align{
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
 }
-.single-message{
-  border-bottom: solid 1px black;
+
+.all-message-header{
+  display: block;
+  height: 4rem;
+  width: 100%;
+  background-color: white;
+  border: groove whitesmoke 1px;
 }

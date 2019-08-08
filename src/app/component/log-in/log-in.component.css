@@ -1,6 +1,8 @@
-.page{
-  background: aliceblue;
-  height: 600px;
+.login-page{
+  display: block;
+  background-color: #c7fdff;
+  height: 650px;
+  width: 100%;
 }
 button{
   width: 100px;
