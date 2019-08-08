@@ -23,6 +23,7 @@
 .user-search-input {
   background: #25197a;
   border-right: none;
+  color: white;
 }
 .user-search-div{
   margin-bottom: 10px;

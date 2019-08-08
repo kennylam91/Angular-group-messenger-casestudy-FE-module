@@ -1,9 +1,6 @@
 <div class="all-message-div">
-<!--<div class="all-message-header">-->
-<!--  All-message header-->
-<!--</div>-->
 <div class="all-message-content" id="all-message">
-  <div *ngFor="let mes of messageList" class="single-message p-2"[class.right-align]="mes.username === loginUser.username">
+  <div *ngFor="let mes of messageList" class="single-message"  [class.right-align]="mes.username === loginUser.username">
     <div class="message">
       <div style="color: darkorange;">{{mes.username}}</div>
       <div style="max-width: 100%; word-wrap: break-spaces">{{mes.content}}</div>

@@ -14,9 +14,8 @@ export class UserService {
     {username: 'admin3', password: 'admin3', status: 'offline'},
     {username: 'admin4', password: 'admin4', status: 'offline'},
     {username: 'admin5', password: 'admin5', status: 'offline'},
-    {username: 'phamlam91', password: '1', status: 'offline'},
-    {username: 'kennylam', password: '1', status: 'offline'},
-    {username: 'kennylam2019', password: '1', status: 'offline'},
+    {username: 'phamlam91', password: '1111', status: 'offline'},
+    {username: 'kennylam', password: '1111', status: 'offline'},
   ];
   loginUser: IUser = {
     username: 'admin',
