@@ -11,6 +11,7 @@ import {UserListComponent} from './component/user-list/user-list.component';
 import {HeaderComponent} from './component/header/header.component';
 import {GroupviewComponent} from './component/groupview/groupview.component';
 import {SignUpComponent} from './component/sign-up/sign-up.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {SignUpComponent} from './component/sign-up/sign-up.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
