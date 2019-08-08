@@ -37,6 +37,11 @@ export class UserService {
     return false;
   }
 
+  searchUser(c: string): IUser[] {
+    const users = this.userList;
+    return users.filter(user => user.username.indexOf(c) !== -1);
+  }
+
   constructor() {
   }
 }

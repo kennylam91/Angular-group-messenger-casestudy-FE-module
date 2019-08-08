@@ -22,6 +22,11 @@ export class UserListComponent implements OnInit {
     console.log('log out user');
   }
 
+  searchUsers(username: string) {
+    console.log(username);
+    this.userList = this.userService.searchUser(username);
+  }
+
   ngOnInit() {
   }
 
