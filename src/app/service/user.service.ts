@@ -22,8 +22,8 @@ export class UserService {
     return this.http.get<IUser[]>(this.API_URL);
   }
 
-  addtoUserList(user: IUser) {
-    this.userList.push(user);
+  createUser(user: IUser): Observable<IUser> {
+    return this.http.post<IUser>(this.API_URL, user);
   }
 
   login(user: IUser): boolean {

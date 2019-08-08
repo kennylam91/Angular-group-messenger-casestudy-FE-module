@@ -23,9 +23,18 @@ export class SignUpComponent implements OnInit {
       password: this.userRegisterForm.value.password,
       status: 'offline',
     };
-    this.userService.addtoUserList(this.newUser);
-    console.log(this.userService.userList);
-    this.router.navigateByUrl('login');
+    this.userService.getUsers()
+      .subscribe(next => {
+        this.userService.userList = next;
+        this.userService.createUser(this.newUser)
+          .subscribe(next2 => {
+            this.userService.userList.push(this.newUser);
+            console.log(this.userService.userList);
+            this.router.navigateByUrl('login');
+          });
+      });
+
+
   }
 
   constructor(private userService: UserService, private router: Router) {
