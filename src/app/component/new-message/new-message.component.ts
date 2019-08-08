@@ -10,14 +10,13 @@ import {UserService} from '../../service/user.service';
 })
 export class NewMessageComponent implements OnInit {
 
-  private message: IMessage = {
-    username: '',
-    content: ''
-  };
+  private message: IMessage;
 
   onSubmit(messageText: string) {
-    this.message.username = this.userService.loginUser.username;
-    this.message.content = messageText;
+    this.message = {
+      username: this.userService.loginUser.username,
+      content: messageText
+    };
     console.log(this.message);
     this.messageService.addMessage(this.message);
     this.messageService.scrollAllMessage();
