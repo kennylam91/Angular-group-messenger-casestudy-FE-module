@@ -21,7 +21,7 @@ export class MessageService {
       ;
   }
 
-  createMessage(mes: Partial<IMessage>): Observable<IMessage> {
+  createMessage(mes: IMessage): Observable<IMessage> {
     return this.http.post<IMessage>(this.API_URL, mes);
   }
 

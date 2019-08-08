@@ -14,19 +14,20 @@ export class NewMessageComponent implements OnInit {
   private messageList: IMessage[];
 
   onSubmit(messageText: string) {
+    this.messageList = this.messageService.messageList;
     this.message = {
+      id: 10,
       username: this.userService.loginUser.username,
       content: messageText
     };
-    console.log(this.messageList);
+    this.messageService.createMessage(this.message)
+      .subscribe(next => this.messageList.push(next));
   }
 
   constructor(private messageService: MessageService, private userService: UserService) {
-
   }
 
   ngOnInit() {
-
   }
 
 }
