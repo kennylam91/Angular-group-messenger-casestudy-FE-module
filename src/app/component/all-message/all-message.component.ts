@@ -25,7 +25,7 @@ export class AllMessageComponent implements OnInit {
       .subscribe(next => {
         this.messageList = next;
         this.messageService.messageList = next;
-        console.log(this.messageService.messageList); // Test
+        this.messageService.scrollAllMessage();
       }, error => (this.messageList = []));
     this.messageService.scrollAllMessage();
   }

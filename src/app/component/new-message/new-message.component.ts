@@ -21,7 +21,10 @@ export class NewMessageComponent implements OnInit {
       content: messageText
     };
     this.messageService.createMessage(this.message)
-      .subscribe(next => this.messageList.push(next));
+      .subscribe(next => {
+        this.messageList.push(next);
+        this.messageService.scrollAllMessage();
+      });
   }
 
   constructor(private messageService: MessageService, private userService: UserService) {
