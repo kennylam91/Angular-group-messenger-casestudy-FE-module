@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {IUser} from '../model/user';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,21 +9,18 @@ import {IUser} from '../model/user';
 export class UserService {
   static STATUS_ONLINE = 'online';
   static STATUS_OFFLINE = 'offline';
-  userList: IUser[] = [
-    {username: 'admin', password: 'admin', status: 'online'},
-    {username: 'admin1', password: 'admin1', status: 'online'},
-    {username: 'admin2', password: 'admin2', status: 'online'},
-    {username: 'admin3', password: 'admin3', status: 'offline'},
-    {username: 'admin4', password: 'admin4', status: 'offline'},
-    {username: 'admin5', password: 'admin5', status: 'offline'},
-    {username: 'phamlam91', password: '1111', status: 'offline'},
-    {username: 'kennylam', password: '1111', status: 'offline'},
-  ];
+  private readonly API_URL = 'http://my-json-server.typicode.com/kennylam91/test_api_server/users';
+
+  userList: IUser[];
   loginUser: IUser = {
     username: 'admin',
     password: 'admin',
     status: 'online'
   }; // Test login user
+
+  getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this.API_URL);
+  }
 
   addtoUserList(user: IUser) {
     this.userList.push(user);
@@ -44,6 +43,6 @@ export class UserService {
     return users.filter(user => user.username.indexOf(c) !== -1);
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 }
