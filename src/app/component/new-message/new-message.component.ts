@@ -11,15 +11,14 @@ import {UserService} from '../../service/user.service';
 export class NewMessageComponent implements OnInit {
 
   private message: IMessage;
+  private messageList: IMessage[];
 
   onSubmit(messageText: string) {
     this.message = {
       username: this.userService.loginUser.username,
       content: messageText
     };
-    console.log(this.message);
-    this.messageService.addMessage(this.message);
-    this.messageService.scrollAllMessage();
+    console.log(this.messageList);
   }
 
   constructor(private messageService: MessageService, private userService: UserService) {
@@ -27,6 +26,7 @@ export class NewMessageComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

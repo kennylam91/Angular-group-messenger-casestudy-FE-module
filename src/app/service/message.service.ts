@@ -1,30 +1,28 @@
 import {Injectable} from '@angular/core';
 import {IMessage} from '../model/message';
 import * as $ from 'jquery';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  messageList: IMessage[] = [
-    {content: 'Xin chao', username: 'admin'},
-    {content: 'Cam on', username: 'admin1'},
-    {content: 'Chao buoi sang', username: 'admin'},
-    {content: 'Chao buoi trua', username: 'admin2'},
-    {content: 'Chao buoi toi', username: 'admin3'},
-    {content: 'Chao buoi toi', username: 'admin'},
-    {content: 'Chao buoi toi', username: 'admin1'},
-    {content: 'Chao buoi toi', username: 'admin4'},
-    {content: 'Chao buoi toi', username: 'admin3'},
-    {content: 'Chao buoi toi', username: 'admin1'},
-    {content: 'Chao buoi toi', username: 'admin2'},
-    {content: 'Chao buoi toi', username: 'admin3'},
-    {content: 'Chao buoi toi', username: 'admin4'},
-    {content: 'Chao buoi toi', username: 'admin4'},
-  ];
+  private readonly API_URL = 'http://my-json-server.typicode.com/kennylam91/test_api_server/messages';
+  messageList: IMessage[];
 
-  addMessage(message: IMessage) {
-    this.messageList.push(message);
+  constructor(private http: HttpClient) {
+  }
+
+  getMessages(): Observable<IMessage[]> {
+    return this.http.get<IMessage[]>(this.API_URL)
+      // .pipe(map(response => response.filter((message, i) => i < count)))
+      ;
+  }
+
+  createMessage(mes: Partial<IMessage>): Observable<IMessage> {
+    return this.http.post<IMessage>(this.API_URL, mes);
   }
 
   scrollAllMessage() {
@@ -35,6 +33,4 @@ export class MessageService {
     });
   }
 
-  constructor() {
-  }
 }

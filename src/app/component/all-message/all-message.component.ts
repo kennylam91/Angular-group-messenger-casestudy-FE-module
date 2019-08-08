@@ -16,11 +16,17 @@ export class AllMessageComponent implements OnInit {
   loginUser: IUser;
 
   constructor(private messageService: MessageService, private userService: UserService) {
-    this.messageList = this.messageService.messageList;
     this.loginUser = this.userService.loginUser;
   }
 
   public ngOnInit() {
+    this.messageService
+      .getMessages()
+      .subscribe(next => {
+        this.messageList = next;
+        this.messageService.messageList = next;
+        console.log(this.messageService.messageList); // Test
+      }, error => (this.messageList = []));
     this.messageService.scrollAllMessage();
   }
 
