@@ -5,7 +5,7 @@
   <div class="user-list">
     <form class="user-search-div input-group" (ngSubmit)="searchUsers(userSearch.value)">
       <input type="text" placeholder="Find user"
-             class="user-search-input form-control" #userSearch >
+             class="user-search-input form-control" #userSearch>
       <div class="input-group-append">
         <span class="input-group-text search-icon">
           <i class="fas fa-search"></i>
@@ -13,8 +13,12 @@
       </div>
     </form>
     <div class="single-user" *ngFor="let user of userList">
-      <div>{{user.username}}</div>
-      <div>{{user.status}}</div>
+      <div>{{user.username}}
+      </div>
+      <div class="user-status">
+        <i *ngIf="user.status==='online'" id="user-online-icon" class="fas fa-circle user-online-icon"></i>
+        <i *ngIf="user.status==='offline'" id="user-offline-icon" class="fas fa-circle user-offline-icon"></i>
+        {{user.status}}</div>
     </div>
   </div>
   <div class="user-footer">

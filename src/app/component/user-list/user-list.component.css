@@ -35,7 +35,17 @@
   text-align: center;
 
 }
-
-#log-out-icon:hover {
-
+.user-status{
+  font-size: 0.75rem;
+}
+.user-offline-icon{
+  font-size: 0.5rem;
+  color: white;
+}
+.user-online-icon{
+  font-size: 0.5rem;
+  color: springgreen ;
+}
+.online-status{
+  color: aqua;
 }
