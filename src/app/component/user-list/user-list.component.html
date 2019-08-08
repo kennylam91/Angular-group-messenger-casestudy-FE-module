@@ -3,8 +3,13 @@
     <p>Codegym Group <br>{{loginUser.username}}</p>
   </div>
   <div class="user-list">
-    <div>
-      <input type="text" class="find-user" placeholder="Find user">
+    <div class="user-search-div input-group">
+      <input type="text" class="user-search-input form-control" placeholder="Find user">
+      <div class="input-group-append">
+        <span class="input-group-text search-icon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
     </div>
     <div class="single-user" *ngFor="let user of userList">
       <div>{{user.username}}</div>
